@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakshit Tandon — Product Designer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="site-logo">Rakshit's Portfolio</span>
+      <nav class="site-nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <a class="back-link" href="../index.html">
+    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.5 7H3.5M3.5 7L6.5 10M3.5 7L6.5 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    All iterations
+  </a>
+
+  <div class="page-body">
+
+    <!-- Figma 1800:14348 — hero + projects share 73px gap & 120px top padding -->
+    <div class="iteration-top">
+
+      <section class="hero" id="profile">
+        <!-- Figma 1819:15406 — Simple hover: line art → smile in same circle -->
+        <div
+          class="hero-avatar-simple"
+          tabindex="0"
+          aria-label="Profile illustration. Hover or focus to see a smiling version."
+        >
+          <div class="hero-avatar-ring">
+            <img
+              class="hero-avatar-layer hero-avatar-layer--default"
+              src="assets/avatar-line-default.png"
+              alt="Rakshit — illustrated avatar"
+              width="140"
+              height="140"
+              decoding="async"
+            />
+            <img
+              class="hero-avatar-layer hero-avatar-layer--hover"
+              src="assets/avatar-smile-hover.png"
+              alt=""
+              width="182"
+              height="147"
+              decoding="async"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+        <div class="hero-text">
+          <h1 class="hero-headline">
+            I'm Rakshit, a designer crafting software products at scale.
+          </h1>
+          <p class="hero-bio">
+            An engineer turned designer currently based in Seattle, I have over 5+ years
+            of experience designing for millions of users in Fintech and AI. I enjoy
+            building with AI and experimenting with code to bring my ideas to life.
+          </p>
+        </div>
+
+        <div class="info-sections">
+          <div class="info-section">
+            <p class="info-section-label">Design roles</p>
+            <div class="info-row">
+              <span class="info-row-title">Senior Product Designer</span>
+              <span class="info-row-leader" aria-hidden="true"></span>
+              <span class="info-row-value">Groww</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row-title">Product Designer</span>
+              <span class="info-row-leader" aria-hidden="true"></span>
+              <span class="info-row-value">Razorpay</span>
+            </div>
+          </div>
+          <div class="info-section">
+            <p class="info-section-label">Education</p>
+            <div class="info-row">
+              <span class="info-row-title">MS HCI+D</span>
+              <span class="info-row-leader" aria-hidden="true"></span>
+              <span class="info-row-value">University of Washington</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row-title">Engineering</span>
+              <span class="info-row-leader" aria-hidden="true"></span>
+              <span class="info-row-value">IIT Roorkee</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects-section" id="work">
+        <div class="filter-bar" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" aria-pressed="true" data-filter="all">All</button>
+          <button class="filter-btn" aria-pressed="false" data-filter="work">Work</button>
+          <button class="filter-btn" aria-pressed="false" data-filter="ai">AI Builds</button>
+        </div>
+
+        <div class="project-grid">
+          <div class="project-grid-row">
+            <article class="project-card" data-category="work">
+              <div class="card-image align-bottom">
+                <img src="https://www.figma.com/api/mcp/asset/925e998e-3ba0-4de4-b3d8-285e8cee48d9" alt="" />
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">Place orders 40% faster on Groww</h2>
+                <p class="card-meta"><span class="brand">Groww</span>&nbsp;• Jun'24</p>
+              </div>
+            </article>
+            <article class="project-card" data-category="work">
+              <div class="card-image align-top">
+                <img src="https://www.figma.com/api/mcp/asset/925e998e-3ba0-4de4-b3d8-285e8cee48d9" alt="" />
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">Designing option chain for 600,000+ users</h2>
+                <p class="card-meta"><span class="brand">Groww</span>&nbsp;• Jun'24</p>
+              </div>
+            </article>
+          </div>
+          <div class="project-grid-row">
+            <article class="project-card" data-category="work">
+              <div class="card-image align-bottom">
+                <img src="https://www.figma.com/api/mcp/asset/925e998e-3ba0-4de4-b3d8-285e8cee48d9" alt="" />
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">Enhanced real-time analytics for live trading</h2>
+                <p class="card-meta card-meta--plain">Zerodha • May'24</p>
+              </div>
+            </article>
+            <article class="project-card" data-category="work">
+              <div class="card-image align-top">
+                <img src="https://www.figma.com/api/mcp/asset/925e998e-3ba0-4de4-b3d8-285e8cee48d9" alt="" />
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">Boosting user decision-making with instant data</h2>
+                <p class="card-meta card-meta--plain">Zerodha • May'24</p>
+              </div>
+            </article>
+          </div>
+          <div class="project-grid-row">
+            <article class="project-card" data-category="work">
+              <div class="card-image align-bottom">
+                <img src="https://www.figma.com/api/mcp/asset/925e998e-3ba0-4de4-b3d8-285e8cee48d9" alt="" />
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">Introduced dark mode for better night usage</h2>
+                <p class="card-meta card-meta--plain">Upstox • Jul'24</p>
+              </div>
+            </article>
+            <article class="project-card" data-category="work">
+              <div class="card-image align-top">
+                <img src="https://www.figma.com/api/mcp/asset/925e998e-3ba0-4de4-b3d8-285e8cee48d9" alt="" />
+              </div>
+              <div class="card-body">
+                <h2 class="card-title">Improved accessibility and user comfort</h2>
+                <p class="card-meta card-meta--plain">Upstox • Jul'24</p>
+              </div>
+            </article>
+          </div>
+          <div class="project-grid-row">
+            <article class="project-card" data-category="ai">
+              <div class="card-image"></div>
+              <div class="card-body">
+                <h2 class="card-title">Turntable component</h2>
+                <p class="card-meta"><span class="brand neutral">Side Project</span>&nbsp;• Jun'24</p>
+              </div>
+            </article>
+            <article class="project-card" data-category="ai">
+              <div class="card-image"></div>
+              <div class="card-body">
+                <h2 class="card-title">Iterate with Claude</h2>
+                <p class="card-meta"><span class="brand neutral">Side Project</span>&nbsp;• Jun'24</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="about-me-section" id="about" aria-labelledby="about-me-heading">
+      <div class="about-me-inner">
+        <div class="about-me-text">
+          <div class="about-me-lead">
+            <p class="about-me-eyebrow">About me</p>
+            <h2 id="about-me-heading" class="about-me-title">
+              I believe in show and tell; a prototype conveys more than words ever could.
+            </h2>
+          </div>
+          <p class="about-me-body">I'm Rakshit (pronounced R-uh-k-sh-it), an engineer who fell in love with design. I've learned to design, build and test ideas quickly rather than just talking about them.  Outside of work, I tinker with AI tools like Cursor and Claude Code to create small productivity experiments. Away from the screen, you'll find me hiking, playing tennis, or brewing coffee.</p>
+        </div>
+
+        <div class="about-me-collage">
+          <div class="collage-board" aria-label="Draggable collage — photos and tools">
+            <img
+              class="collage-bg"
+              src="https://www.figma.com/api/mcp/asset/8ee5175e-af35-4478-a5e4-7dce80d59f0d"
+              alt=""
+              width="801"
+              height="329"
+              decoding="async"
+            />
+            <div class="collage-layer">
+
+              <div class="collage-draggable collage-polaroid" style="left:5%; top:14%; width:20.6%; height:56%; padding:3px;">
+                <div class="collage-rot-n4" style="width:100%; height:100%; overflow:hidden;">
+                  <img src="https://www.figma.com/api/mcp/asset/a7f0f602-bc68-46fd-bf7c-89d420112559" alt="" />
+                </div>
+              </div>
+
+              <div class="collage-draggable collage-polaroid" style="left:28.2%; top:12.8%; width:16.2%; height:46.7%; padding:4px;">
+                <div class="collage-rot-2" style="width:100%; height:100%; overflow:hidden;">
+                  <img src="https://www.figma.com/api/mcp/asset/487c783f-9a28-449d-af74-d112ac342c21" alt="" />
+                </div>
+              </div>
+
+              <div class="collage-draggable collage-polaroid" style="left:46.7%; top:12.5%; width:19.4%; height:38.3%; padding:4px;">
+                <div class="collage-rot-n2" style="width:100%; height:100%; overflow:hidden;">
+                  <img src="https://www.figma.com/api/mcp/asset/b17188d5-8b53-4b28-980b-b67dd6b1b4a6" alt="" />
+                </div>
+              </div>
+
+              <div class="collage-draggable collage-polaroid" style="left:34.2%; top:58.2%; width:19.6%; height:38.8%; padding:4px;">
+                <div class="collage-rot-2" style="width:100%; height:100%; overflow:hidden;">
+                  <img src="https://www.figma.com/api/mcp/asset/d5b77940-fe89-4483-978e-3a0eb4550e6f" alt="" />
+                </div>
+              </div>
+
+              <div class="collage-draggable collage-blr-sea" style="left:59.2%; top:76.5%; width:19.1%; min-height:17%;">
+                <span>BLR</span>
+                <span class="collage-plane" aria-hidden="true">
+                  <img src="https://www.figma.com/api/mcp/asset/3e49c200-0d84-4974-9689-a585c9779da9" alt="" />
+                </span>
+                <span>SEA</span>
+              </div>
+
+              <div class="collage-draggable" style="left:70.4%; top:9.6%; width:22%; height:49%;">
+                <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; height:100%;">
+                  <div class="collage-rot-2" style="width:31%; aspect-ratio:1;">
+                    <div class="collage-app">
+                      <img src="https://www.figma.com/api/mcp/asset/582ad530-e7b4-4aa8-b72c-a0c95ab522b4" alt="" />
+                    </div>
+                  </div>
+                  <div style="width:29%; aspect-ratio:1;">
+                    <div class="collage-app">
+                      <img src="https://www.figma.com/api/mcp/asset/554a0967-a559-4c6c-b113-755e47f37c08" alt="" />
+                    </div>
+                  </div>
+                  <div class="collage-rot-n2" style="width:31%; aspect-ratio:1;">
+                    <div class="collage-app">
+                      <img src="https://www.figma.com/api/mcp/asset/3106423f-ac67-4684-a68e-0b7cf83fe4d0" alt="" />
+                    </div>
+                  </div>
+                  <div class="collage-rot-n2" style="width:31%; aspect-ratio:1;">
+                    <div class="collage-app">
+                      <img src="https://www.figma.com/api/mcp/asset/fecbf034-08dc-43e5-8ca3-4adabb393d0d" alt="" />
+                    </div>
+                  </div>
+                  <div style="width:29%; aspect-ratio:1;">
+                    <div class="collage-app">
+                      <img src="https://www.figma.com/api/mcp/asset/cccc0e79-01f9-4349-99bf-8789b8dccaed" alt="" />
+                    </div>
+                  </div>
+                  <div class="collage-rot-n2" style="width:31%; aspect-ratio:1;">
+                    <div class="collage-app">
+                      <img src="https://www.figma.com/api/mcp/asset/8ba46850-bfb4-4977-aff8-486c1c532af1" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <span class="collage-pin" style="left:12.2%; top:12.5%;">
+                <img src="https://www.figma.com/api/mcp/asset/c6a55d30-9bb9-4854-90dd-3a446d0a1a2c" alt="" />
+              </span>
+              <span class="collage-pin" style="left:35.1%; top:9.7%;">
+                <img src="https://www.figma.com/api/mcp/asset/c6a55d30-9bb9-4854-90dd-3a446d0a1a2c" alt="" />
+              </span>
+              <span class="collage-pin" style="left:53.6%; top:73%;">
+                <img src="https://www.figma.com/api/mcp/asset/c6a55d30-9bb9-4854-90dd-3a446d0a1a2c" alt="" />
+              </span>
+            </div>
+          </div>
+          <p class="about-me-collage-hint">Try moving things</p>
+        </div>
+      </div>
+    </section>
+
+    <div id="contact" class="contact-anchor" aria-hidden="true"></div>
+
+  </div>
+
+  <script src="collage-drag.js"></script>
+  <script>
+    const btns  = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        btns.forEach(b => { b.setAttribute('aria-pressed','false'); b.classList.remove('active'); });
+        btn.setAttribute('aria-pressed','true');
+        btn.classList.add('active');
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.removeAttribute('hidden');
+          } else {
+            card.setAttribute('hidden','');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

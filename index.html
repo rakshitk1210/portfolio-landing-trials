@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakshit's Portfolio — Iterations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fcfcfc;
+      --bg-secondary: #f7f7f7;
+      --text-primary: #353839;
+      --text-secondary: #7f8283;
+      --text-tertiary: #898c8e;
+      --text-meta: #babbbc;
+      --border: #e7e8e9;
+      --accent-green: #04b488;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ─────────────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    /* ── Main ────────────────────────────────────────────── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 96px 48px 120px;
+    }
+
+    .hub-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+    }
+
+    .hub-title {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .hub-desc {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin-bottom: 72px;
+    }
+
+    /* ── Iteration list ──────────────────────────────────── */
+    .iterations-heading {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    .iteration-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .iteration-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .iteration-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 28px;
+      text-decoration: none;
+      color: inherit;
+      background: white;
+      transition: background 0.15s ease;
+    }
+
+    .iteration-link:hover {
+      background: var(--bg-secondary);
+    }
+
+    .iteration-link.disabled {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .iteration-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .iteration-number {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+    }
+
+    .iteration-name {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .iteration-item.disabled .iteration-name {
+      color: var(--text-meta);
+    }
+
+    .iteration-tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      background: transparent;
+    }
+
+    .iteration-tag.live {
+      color: var(--accent-green);
+      border-color: currentColor;
+    }
+
+    .arrow-icon {
+      width: 18px;
+      height: 18px;
+      stroke: var(--text-meta);
+      flex-shrink: 0;
+    }
+
+    .iteration-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--text-meta);
+    }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 640px) {
+      header, footer { padding: 20px 24px; }
+      main { padding: 60px 24px 80px; }
+      .hub-title { font-size: 28px; }
+      .hub-desc { font-size: 16px; }
+      .iteration-link { padding: 20px 20px; }
+      .iteration-name { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Rakshit's Portfolio</a>
+  </header>
+
+  <main>
+    <p class="hub-eyebrow">Design lab</p>
+    <h1 class="hub-title">Portfolio iterations</h1>
+    <p class="hub-desc">
+      A running record of every attempt at building the perfect portfolio landing page —
+      each iteration explores a different direction, layout, or aesthetic. Pick one to explore.
+    </p>
+
+    <p class="iterations-heading">All iterations</p>
+
+    <ul class="iteration-list">
+
+      <li class="iteration-item">
+        <a class="iteration-link" href="iteration-8/index.html">
+          <div class="iteration-meta">
+            <span class="iteration-number">Iteration 08</span>
+            <span class="iteration-name">36px inline avatar chip, narrow 600px hero, "Previously at" row</span>
+          </div>
+          <div class="iteration-right">
+            <span class="iteration-tag live">Live</span>
+            <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class="iteration-item">
+        <a class="iteration-link" href="iteration-7/index.html">
+          <div class="iteration-meta">
+            <span class="iteration-number">Iteration 07</span>
+            <span class="iteration-name">48px headline with inline image chips, no experience section</span>
+          </div>
+          <div class="iteration-right">
+            <span class="iteration-tag live">Live</span>
+            <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class="iteration-item">
+        <a class="iteration-link" href="iteration-6/index.html">
+          <div class="iteration-meta">
+            <span class="iteration-number">Iteration 06</span>
+            <span class="iteration-name">Centered nav, company-logo experience rows, avatar hover swap</span>
+          </div>
+          <div class="iteration-right">
+            <span class="iteration-tag live">Live</span>
+            <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class="iteration-item">
+        <a class="iteration-link" href="iteration-5/index.html">
+          <div class="iteration-meta">
+            <span class="iteration-number">Iteration 05</span>
+            <span class="iteration-name">v2 flow — Figma board layout, pegboard collage, 6 + AI row</span>
+          </div>
+          <div class="iteration-right">
+            <span class="iteration-tag live">Live</span>
+            <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class="iteration-item">
+        <a class="iteration-link" href="iteration-4/index.html">
+          <div class="iteration-meta">
+            <span class="iteration-number">Iteration 04</span>
+            <span class="iteration-name">Wide grid — 3-column layout, scales to 2 at 1200px</span>
+          </div>
+          <div class="iteration-right">
+            <span class="iteration-tag live">Live</span>
+            <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class="iteration-item">
+        <a class="iteration-link" href="iteration-3/index.html">
+          <div class="iteration-meta">
+            <span class="iteration-number">Iteration 03</span>
+            <span class="iteration-name">Split panel — fixed sidebar, scrollable work grid</span>
+          </div>
+          <div class="iteration-right">
+            <span class="iteration-tag live">Live</span>
+            <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class="iteration-item">
+        <a class="iteration-link" href="iteration-2/index.html">
+          <div class="iteration-meta">
+            <span class="iteration-number">Iteration 02</span>
+            <span class="iteration-name">Compact column — tighter scale, narrower hero</span>
+          </div>
+          <div class="iteration-right">
+            <span class="iteration-tag live">Live</span>
+            <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+      <li class="iteration-item">
+        <a class="iteration-link" href="iteration-1/index.html">
+          <div class="iteration-meta">
+            <span class="iteration-number">Iteration 01</span>
+            <span class="iteration-name">Clean grid — Groww-influenced minimal</span>
+          </div>
+          <div class="iteration-right">
+            <span class="iteration-tag live">Live</span>
+            <svg class="arrow-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer>
+    <span class="footer-copy">Rakshit Tandon · Portfolio lab</span>
+  </footer>
+
+</body>
+</html>

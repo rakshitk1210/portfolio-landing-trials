@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakshit Tandon — Product Designer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="site-nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <a class="back-link" href="../index.html">
+    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.5 7H3.5M3.5 7L6.5 10M3.5 7L6.5 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    All iterations
+  </a>
+
+  <div class="page-body">
+
+    <div class="content-column">
+
+      <!-- ── Hero ───────────────────────────────────────────────── -->
+      <section class="hero" id="profile">
+
+        <div
+          class="hero-avatar-wrap"
+          tabindex="0"
+          aria-label="Illustrated avatar. Hover to see a waving version."
+        >
+          <img
+            class="avatar-img avatar-img--default"
+            src="assets/avatar-default.png"
+            alt="Rakshit — illustrated avatar"
+            width="102"
+            decoding="async"
+          />
+          <img
+            class="avatar-img avatar-img--hover"
+            src="assets/avatar-hover.png"
+            alt=""
+            width="225"
+            decoding="async"
+            aria-hidden="true"
+          />
+        </div>
+
+        <div class="hero-text">
+          <h1 class="hero-headline">
+            <span class="visually-hidden">I'm Rakshit, a designer crafting software products at scale.</span>
+            <span
+              class="headline-repulsion-root"
+              data-headline-repulsion="I'm Rakshit, a designer crafting software products at scale."
+              aria-hidden="true"
+            ></span>
+          </h1>
+          <p class="hero-bio">
+            An engineer turned designer currently based in Seattle, I have over 5+ years
+            of experience designing for millions of users in Fintech and AI. I enjoy
+            building with AI and experimenting with code to bring my ideas to life.
+          </p>
+        </div>
+
+        <div class="experience-section">
+          <p class="experience-label">Experience</p>
+          <div class="experience-rows">
+
+            <div class="exp-row">
+              <div class="exp-left">
+                <div class="exp-company">
+                  <div class="exp-logo-circle">
+                    <img src="assets/logo-groww.png" alt="Groww" />
+                  </div>
+                  <span class="exp-company-name">Groww</span>
+                </div>
+                <span class="exp-bullet">•</span>
+                <span class="exp-role">YC W18</span>
+              </div>
+              <span class="exp-leader" aria-hidden="true"></span>
+              <span class="exp-years">Senior Product Designer</span>
+            </div>
+
+            <div class="exp-row">
+              <div class="exp-left">
+                <div class="exp-company">
+                  <div class="exp-logo-circle">
+                    <img src="assets/logo-razorpay.png" alt="Razorpay" />
+                  </div>
+                  <span class="exp-company-name">Razorpay</span>
+                </div>
+                <span class="exp-bullet">•</span>
+                <span class="exp-role">YC W15</span>
+              </div>
+              <span class="exp-leader" aria-hidden="true"></span>
+              <span class="exp-years">Product Designer</span>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+    </div><!-- /content-column -->
+
+    <!-- ── Work ───────────────────────────────────────────────── -->
+    <section class="work-section" id="work">
+
+      <div class="mode-switcher" role="group" aria-label="Filter projects">
+        <button class="mode-btn active" aria-pressed="true" data-filter="work">Work</button>
+        <button class="mode-btn" aria-pressed="false" data-filter="ai">AI Builds</button>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-grid-row">
+          <article class="project-card" data-category="work">
+            <div class="card-image align-bottom">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Place orders 40% faster on Groww</h2>
+              <p class="card-meta"><span class="brand">Groww</span>&nbsp;• Jun'24</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="work">
+            <div class="card-image align-top">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Designing option chain for 600,000+ users</h2>
+              <p class="card-meta"><span class="brand">Groww</span>&nbsp;• Jun'24</p>
+            </div>
+          </article>
+        </div>
+        <div class="project-grid-row">
+          <article class="project-card" data-category="work">
+            <div class="card-image align-bottom">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Enhanced real-time analytics for live trading</h2>
+              <p class="card-meta card-meta--plain">Zerodha • May'24</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="work">
+            <div class="card-image align-top">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Boosting user decision-making with instant data</h2>
+              <p class="card-meta card-meta--plain">Zerodha • May'24</p>
+            </div>
+          </article>
+        </div>
+        <div class="project-grid-row">
+          <article class="project-card" data-category="work">
+            <div class="card-image align-bottom">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Introduced dark mode for better night usage</h2>
+              <p class="card-meta card-meta--plain">Upstox • Jul'24</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="work">
+            <div class="card-image align-top">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Improved accessibility and user comfort</h2>
+              <p class="card-meta card-meta--plain">Upstox • Jul'24</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── About ──────────────────────────────────────────────── -->
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="about-inner">
+
+        <div class="about-text">
+          <div class="about-lead">
+            <p class="about-eyebrow">About me</p>
+            <h2 id="about-heading" class="about-title">
+              I believe in show and tell; a prototype conveys more than words ever could.
+            </h2>
+          </div>
+          <p class="about-body">I'm Rakshit (pronounced R-uh-k-sh-it), an engineer who fell in love with design. I've learned to design, build and test ideas quickly rather than just talking about them.  Outside of work, I tinker with AI tools like Cursor and Claude Code to create small productivity experiments. Away from the screen, you'll find me hiking, playing tennis, or brewing coffee.</p>
+        </div>
+
+        <div class="about-collage">
+          <img
+            src="assets/collage.png"
+            alt="Photo collage — hiking, tools and cities"
+            width="1200"
+            height="361"
+            decoding="async"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <div id="contact" class="contact-anchor" aria-hidden="true"></div>
+
+  </div><!-- /page-body -->
+
+  <script src="headline-repulsion.js"></script>
+  <script>
+    const btns  = document.querySelectorAll('.mode-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        btns.forEach(b => { b.setAttribute('aria-pressed','false'); b.classList.remove('active'); });
+        btn.setAttribute('aria-pressed','true');
+        btn.classList.add('active');
+        cards.forEach(card => {
+          if (card.dataset.category === filter) {
+            card.removeAttribute('hidden');
+          } else {
+            card.setAttribute('hidden','');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
