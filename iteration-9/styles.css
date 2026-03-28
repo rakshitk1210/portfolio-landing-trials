@@ -726,13 +726,13 @@ a   { color: inherit; text-decoration: none; }
 .moustache-card {
   position: relative;
   background: var(--bg-white);
-  border-radius: 18px;
-  width: 360px;
-  padding: 39px 53px 28px;
+  border-radius: 22px;
+  width: 432px;
+  padding: 47px 64px 34px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: 14px;
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.22);
   transform: scale(0.88);
   opacity: 0;
@@ -769,9 +769,9 @@ a   { color: inherit; text-decoration: none; }
 
 .moustache-canvas-wrap {
   position: relative;
-  width: 254px;
-  height: 254px;
-  border-radius: 12px;
+  width: 305px;
+  height: 305px;
+  border-radius: 14px;
   overflow: hidden;
   background: var(--bg-secondary);
   flex-shrink: 0;
@@ -818,7 +818,7 @@ a   { color: inherit; text-decoration: none; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-tertiary);
-  width: 254px;
+  width: 305px;
   text-align: center;
 }
 
