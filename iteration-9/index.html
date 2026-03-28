@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakshit Tandon — Product Designer (9)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="site-nav">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <a class="back-link" href="../index.html">
+    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.5 7H3.5M3.5 7L6.5 10M3.5 7L6.5 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    All iterations
+  </a>
+
+  <div class="page-body">
+
+    <!-- ── Hero ─────────────────────────────────────────────────── -->
+    <section class="hero" id="profile">
+
+      <!-- Floating domain chips -->
+      <div class="floating-chips" aria-hidden="true">
+        <span class="fchip fchip--ai">AI</span>
+        <span class="fchip fchip--fintech">Fintech</span>
+      </div>
+
+      <!-- Headline + bio -->
+      <div class="hero-top">
+        <!-- Location pill -->
+        <span class="location-pill">📍 SEATTLE, WA</span>
+
+        <div class="hero-headline-wrap">
+          <h1 class="hero-headline">
+            <span class="visually-hidden">I'm Rakshit, a designer crafting software products at scale.</span>
+            <span
+              class="rep-headline"
+              data-repulsion
+              data-repulsion-mixed
+              aria-hidden="true"
+            >I'm Rakshit,<button
+                class="avatar-chip"
+                id="avatarChipBtn"
+                aria-label="Click to draw a moustache"
+                type="button"
+              ><img src="assets/avatar-chip.png" alt="" decoding="async" id="avatarChipImg" /></button> a designer crafting software products at scale.</span>
+          </h1>
+        </div>
+        <p class="hero-bio">I have over 5+ years of experience designing for millions of users. I enjoy building with AI and experimenting with code to bring my ideas to life.</p>
+      </div>
+
+      <!-- Experience -->
+      <div class="experience-section">
+        <p class="experience-label">Previously at</p>
+        <div class="experience-rows">
+
+          <div class="exp-row">
+            <div class="exp-left">
+              <div class="exp-company">
+                <div class="exp-logo-circle">
+                  <img src="assets/logo-groww.png" alt="Groww" />
+                </div>
+                <span class="exp-company-name">Groww</span>
+              </div>
+              <span class="exp-bullet">•</span>
+              <span class="exp-tag">YC W18</span>
+            </div>
+            <span class="exp-leader" aria-hidden="true"></span>
+            <span class="exp-role">Senior Product Designer</span>
+          </div>
+
+          <div class="exp-row">
+            <div class="exp-left">
+              <div class="exp-company">
+                <div class="exp-logo-circle">
+                  <img src="assets/logo-razorpay.svg" alt="Razorpay" />
+                </div>
+                <span class="exp-company-name">Razorpay</span>
+              </div>
+              <span class="exp-bullet">•</span>
+              <span class="exp-tag">YC W15</span>
+            </div>
+            <span class="exp-leader" aria-hidden="true"></span>
+            <span class="exp-role">Product Designer</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Work ──────────────────────────────────────────────────── -->
+    <section class="work-section" id="work">
+
+      <div class="mode-switcher" role="group" aria-label="Filter projects">
+        <button class="mode-btn active" aria-pressed="true" data-filter="work">Work</button>
+        <button class="mode-btn" aria-pressed="false" data-filter="ai">AI Builds</button>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-grid-row">
+          <article class="project-card" data-category="work">
+            <div class="card-image align-bottom">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Place orders 40% faster on Groww</h2>
+              <p class="card-meta"><span class="brand">Groww</span>&nbsp;• Jun'24</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="work">
+            <div class="card-image align-top">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Designing option chain for 600,000+ users</h2>
+              <p class="card-meta"><span class="brand">Groww</span>&nbsp;• Jun'24</p>
+            </div>
+          </article>
+        </div>
+        <div class="project-grid-row">
+          <article class="project-card" data-category="work">
+            <div class="card-image align-bottom">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Enhanced real-time analytics for live trading</h2>
+              <p class="card-meta card-meta--plain">Zerodha • May'24</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="work">
+            <div class="card-image align-top">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Boosting user decision-making with instant data</h2>
+              <p class="card-meta card-meta--plain">Zerodha • May'24</p>
+            </div>
+          </article>
+        </div>
+        <div class="project-grid-row">
+          <article class="project-card" data-category="work">
+            <div class="card-image align-bottom">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Introduced dark mode for better night usage</h2>
+              <p class="card-meta card-meta--plain">Upstox • Jul'24</p>
+            </div>
+          </article>
+          <article class="project-card" data-category="work">
+            <div class="card-image align-top">
+              <img src="assets/card-mockup.png" alt="" />
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">Improved accessibility and user comfort</h2>
+              <p class="card-meta card-meta--plain">Upstox • Jul'24</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── About ─────────────────────────────────────────────────── -->
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="about-inner">
+
+        <div class="about-text">
+          <div class="about-lead">
+            <p class="about-eyebrow">About me</p>
+            <h2 id="about-heading" class="about-title">
+              I believe in show and tell; a prototype conveys more than words ever could.
+            </h2>
+          </div>
+          <p class="about-body">I'm Rakshit (pronounced R-uh-k-sh-it), an engineer who fell in love with design. I've learned to design, build and test ideas quickly rather than just talking about them.  Outside of work, I tinker with AI tools like Cursor and Claude Code to create small productivity experiments. Away from the screen, you'll find me hiking, playing tennis, or brewing coffee.</p>
+        </div>
+
+        <div class="about-collage">
+          <img
+            src="assets/collage.png"
+            alt="Photo collage — hiking, tools and cities"
+            width="1200"
+            height="361"
+            decoding="async"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <div id="contact" class="contact-anchor" aria-hidden="true"></div>
+
+  </div>
+
+  <script>
+    /* ── Work section filter ───────────────────────────────────── */
+    const btns  = document.querySelectorAll('.mode-btn');
+    const cards = document.querySelectorAll('.project-card');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        btns.forEach(b => { b.setAttribute('aria-pressed','false'); b.classList.remove('active'); });
+        btn.setAttribute('aria-pressed','true');
+        btn.classList.add('active');
+        cards.forEach(card => {
+          if (card.dataset.category === filter) {
+            card.removeAttribute('hidden');
+          } else {
+            card.setAttribute('hidden','');
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- ── Moustache Modal ─────────────────────────────────────── -->
+  <div class="moustache-overlay" id="moustacheOverlay" aria-hidden="true">
+    <div class="moustache-card" role="dialog" aria-modal="true" aria-label="Draw a moustache">
+      <button class="moustache-close" id="moustacheClose" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="moustache-canvas-wrap">
+        <img class="moustache-avatar-img" src="assets/avatar-chip.png" alt="" id="moustacheAvatarImg" />
+        <canvas class="moustache-canvas" id="moustacheCanvas"></canvas>
+        <div class="moustache-pen-hint" id="moustachePenHint" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20H21M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="#353839" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <p class="moustache-label">Draw a moustache</p>
+    </div>
+  </div>
+
+  <script src="repulsion.js"></script>
+
+  <script>
+    /* Blur-reveal on subtitle only (headline uses repulsion.js) */
+    (function () {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const el = document.querySelector('.hero-bio');
+      if (!el) return;
+
+      const stagger   = 0.022;
+      const duration  = 0.5;
+      const delay     = 0.2;
+      const maxBlur   = 14;
+      const slideUp   = true;
+
+      const originalText = el.textContent.trim();
+      el.textContent = '';
+      el.setAttribute('aria-label', originalText);
+
+      const words = originalText.split(' ');
+      const charSpans = [];
+      let charIdx = 0;
+
+      words.forEach((word, wi) => {
+        const wordWrap = document.createElement('span');
+        wordWrap.className = 'blur-reveal-word';
+        wordWrap.style.cssText = 'display:inline-flex;white-space:nowrap';
+
+        for (const ch of word) {
+          const d = delay + charIdx * stagger;
+          const charSpan = document.createElement('span');
+          charSpan.className = 'blur-reveal-char';
+          charSpan.style.cssText = [
+            'display:inline-block',
+            `transition:filter ${duration}s cubic-bezier(.25,.1,.25,1) ${d}s,` +
+                      `opacity ${duration}s cubic-bezier(.25,.1,.25,1) ${d}s,` +
+                      `transform ${duration}s cubic-bezier(.25,.1,.25,1) ${d}s`,
+            'will-change:filter,opacity,transform',
+          ].join(';');
+
+          if (!reduced) {
+            charSpan.style.filter    = `blur(${maxBlur}px)`;
+            charSpan.style.opacity   = '0';
+            if (slideUp) charSpan.style.transform = 'translateY(10px)';
+          }
+
+          charSpan.textContent = ch;
+          charSpans.push(charSpan);
+          wordWrap.appendChild(charSpan);
+          charIdx++;
+        }
+
+        el.appendChild(wordWrap);
+
+        if (wi < words.length - 1) {
+          const space = document.createElement('span');
+          space.style.cssText = 'display:inline-block;width:0.27em';
+          space.textContent   = '\u00A0';
+          el.appendChild(space);
+        }
+      });
+
+      el.style.display    = 'flex';
+      el.style.flexWrap   = 'wrap';
+      el.style.alignItems = 'baseline';
+
+      function reveal() {
+        charSpans.forEach(span => {
+          span.style.filter    = 'blur(0px)';
+          span.style.opacity   = '1';
+          span.style.transform = 'translateY(0)';
+        });
+      }
+
+      if (reduced) { reveal(); return; }
+
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { reveal(); io.disconnect(); }
+        });
+      }, { threshold: 0.1 });
+
+      io.observe(el);
+    })();
+  </script>
+
+  <script>
+    /* ── Moustache modal ───────────────────────────────────────── */
+    (function () {
+      const overlay    = document.getElementById('moustacheOverlay');
+      const card       = overlay.querySelector('.moustache-card');
+      const closeBtn   = document.getElementById('moustacheClose');
+      const canvas     = document.getElementById('moustacheCanvas');
+      const penHint    = document.getElementById('moustachePenHint');
+      const chipBtn    = document.getElementById('avatarChipBtn');
+      const chipImg    = document.getElementById('avatarChipImg');
+      const avatarImg  = document.getElementById('moustacheAvatarImg');
+      const ctx        = canvas.getContext('2d');
+
+      let drawing   = false;
+      let hasDrawn  = false;
+      let savedData = null; // persists between open/close
+
+      /* Size canvas to its CSS pixel dimensions (once) */
+      function sizeCanvas() {
+        if (canvas.width > 0) return;
+        const wrap = canvas.parentElement;
+        canvas.width  = wrap.offsetWidth;
+        canvas.height = wrap.offsetHeight;
+      }
+
+      /* Restore previously saved strokes */
+      function restoreDrawing() {
+        if (savedData && canvas.width > 0) {
+          ctx.putImageData(savedData, 0, 0);
+        }
+      }
+
+      /* Save strokes before closing */
+      function saveDrawing() {
+        if (canvas.width > 0) {
+          savedData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        }
+      }
+
+      /* Composite avatar + strokes and push to inline chip */
+      function exportToChip() {
+        const off  = document.createElement('canvas');
+        off.width  = canvas.width;
+        off.height = canvas.height;
+        const octx = off.getContext('2d');
+        octx.drawImage(avatarImg, 0, 0, off.width, off.height);
+        octx.drawImage(canvas, 0, 0);
+        const url = off.toDataURL('image/png');
+        chipImg.src = url;
+        /* also update modal avatar so next open looks right */
+        avatarImg.src = url;
+        savedData = null; /* canvas now matches avatarImg; no need to restore */
+      }
+
+      function open() {
+        overlay.removeAttribute('aria-hidden');
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        sizeCanvas();
+        restoreDrawing();
+        closeBtn.focus();
+      }
+
+      function close() {
+        saveDrawing();
+        overlay.setAttribute('aria-hidden', 'true');
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+        if (hasDrawn) exportToChip();
+      }
+
+      /* Pointer position relative to canvas */
+      function pos(e) {
+        const r = canvas.getBoundingClientRect();
+        const src = e.touches ? e.touches[0] : e;
+        return { x: src.clientX - r.left, y: src.clientY - r.top };
+      }
+
+      function onStart(e) {
+        e.preventDefault();
+        drawing = true;
+        if (!hasDrawn) {
+          hasDrawn = true;
+          penHint.style.opacity = '0';
+          penHint.style.pointerEvents = 'none';
+        }
+        const { x, y } = pos(e);
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+      }
+
+      function onMove(e) {
+        if (!drawing) return;
+        e.preventDefault();
+        const { x, y } = pos(e);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = '#1a1a1a';
+        ctx.lineWidth   = 3.5;
+        ctx.lineCap     = 'round';
+        ctx.lineJoin    = 'round';
+        ctx.stroke();
+      }
+
+      function onEnd() {
+        drawing = false;
+        ctx.beginPath();
+      }
+
+      /* Listeners */
+      chipBtn.addEventListener('click', open);
+
+      closeBtn.addEventListener('click', close);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+      });
+
+      canvas.addEventListener('mousedown',  onStart);
+      canvas.addEventListener('mousemove',  onMove);
+      canvas.addEventListener('mouseup',    onEnd);
+      canvas.addEventListener('mouseleave', onEnd);
+      canvas.addEventListener('touchstart', onStart, { passive: false });
+      canvas.addEventListener('touchmove',  onMove,  { passive: false });
+      canvas.addEventListener('touchend',   onEnd);
+    })();
+  </script>
+
+</body>
+</html>
