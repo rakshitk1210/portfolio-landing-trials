@@ -1,0 +1,721 @@
+/* ─────────────────────────────────────────────────────────
+   Fonts
+   ───────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('../Sohne-Halbfett.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('../Sohne-Kräftig.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Groww Sans';
+  src: url('../GrowwSans-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Design tokens
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  --bg:             #fcfcfc;
+  --bg-secondary:   #f7f7f7;
+  --bg-white:       #ffffff;
+  --border:         #e7e8e9;
+  --border-chip:    #eff0f1;
+  --text-primary:   #353839;
+  --text-secondary: #7f8283;
+  --text-tertiary:  #898c8e;
+  --text-meta:      #babbbc;
+
+  --font-heading: 'Sohne', 'Inter', system-ui, sans-serif;
+  --font-sans:    'Groww Sans', 'Inter', system-ui, sans-serif;
+  --font-ui:      'Inter', system-ui, sans-serif;
+
+  --radius-card:  12px;
+  --radius-image: 8px;
+  --pad-card:     8px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Reset
+   ───────────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+img { display: block; max-width: 100%; }
+a   { color: inherit; text-decoration: none; }
+
+/* ─────────────────────────────────────────────────────────
+   Back link (outside the 800px column)
+   ───────────────────────────────────────────────────────── */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  margin-left: 48px;
+  margin-top: 24px;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover { color: var(--text-primary); }
+
+.back-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Page layout — centred column
+   ───────────────────────────────────────────────────────── */
+
+.page-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Floating pill nav — 800px column, pt-16px
+   ───────────────────────────────────────────────────────── */
+
+.nav-wrap {
+  width: 800px;
+  max-width: 100%;
+  padding: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.nav-pill {
+  background: var(--bg);
+  border-radius: 12px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.nav-logo {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.56px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.nav-links a:hover { color: var(--text-secondary); }
+
+/* ─────────────────────────────────────────────────────────
+   Hero — 800px column, pt-120px pb-60px
+   ───────────────────────────────────────────────────────── */
+
+.hero {
+  width: 800px;
+  max-width: 100%;
+  padding: 120px 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;      /* between [avatar+text] and [experience] */
+}
+
+/* ── Avatar — square, bottom-border only, image spills up ── */
+
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-bottom: 1.087px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-avatar img {
+  position: absolute;
+  left: -1.09px;
+  top: 14.13px;
+  width: 121.739px;
+  height: 121.739px;
+  object-fit: cover;
+  max-width: none;
+  pointer-events: none;
+}
+
+/* ── Avatar + text stacked, gap-12px ─────────────────────── */
+
+.hero-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* ── Headline + bio stacked, gap-12px ───────────────────── */
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* ── Headline (Sohne Halbfett 600, 56px) ───────────────── */
+
+.hero-headline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: -2.24px;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+/* Aurora spray-paint wrapper */
+.aurora-wrap {
+  position: relative;
+  display: block;
+  cursor: default;
+  width: 100%;
+}
+
+.aurora-overlay {
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  pointer-events: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: -2.24px;
+  margin: 0;
+}
+
+/* ── Bio ────────────────────────────────────────────────── */
+
+.hero-bio {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Experience — top border, py-32px
+   ───────────────────────────────────────────────────────── */
+
+.experience-section {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.experience-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  width: 100%;
+}
+
+.experience-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.exp-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.exp-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.exp-company {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exp-logo-groww {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.exp-logo-groww img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+  pointer-events: none;
+}
+
+.exp-logo-razorpay {
+  width: 22px;
+  height: 22px;
+  background: #072654;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.exp-logo-razorpay img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12.87px;
+  height: 14.713px;
+  transform: translate(-50%, -50%);
+  max-width: none;
+  display: block;
+}
+
+.exp-company-name,
+.exp-bullet,
+.exp-role-inline {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.exp-leader {
+  flex: 1;
+  min-width: 0;
+  height: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-leader img {
+  position: absolute;
+  inset: -0.5px 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  display: block;
+}
+
+.exp-date {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Content sections — pb-120px, gap-64px
+   ───────────────────────────────────────────────────────── */
+
+.content-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 120px;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 800px;
+  max-width: 100%;
+}
+
+/* Section heading — Sohne Kräftig 700, 28px */
+.section-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.28px;
+  color: var(--text-primary);
+}
+
+/* ─────────────────────────────────────────────────────────
+   Work cards — 800px, p-8px
+   ───────────────────────────────────────────────────────── */
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.project-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-card);
+  padding: var(--pad-card);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card-image {
+  width: 100%;
+  height: 389px;
+  border-radius: var(--radius-image);
+  background: var(--bg-secondary);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.card-phone {
+  position: absolute;
+  left: calc(50% + 0.5px);
+  top: 32.5px;
+  width: 269px;
+  height: 549.5px;
+  transform: translateX(-50%);
+  object-fit: cover;
+  max-width: none;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* card body — gap-2px (tighter in iter-12) */
+.card-body {
+  background: var(--bg-white);
+  width: 100%;
+  padding: 24px 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-title {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-primary);
+}
+
+.card-meta {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--text-meta);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Gen AI — 2×2 grid, 392px square cards
+   ───────────────────────────────────────────────────────── */
+
+.ai-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.ai-grid-row {
+  display: flex;
+  gap: 16px;
+}
+
+.ai-card {
+  width: 392px;
+  height: 392px;
+  flex-shrink: 0;
+  background: var(--bg-white);
+  border-radius: var(--radius-card);
+  padding: var(--pad-card);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ai-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.ai-card-image {
+  flex: 1;
+  min-height: 0;
+  border-radius: var(--radius-image);
+  background: var(--bg-secondary);
+  overflow: hidden;
+  position: relative;
+}
+
+/* AI card body — gap-2px, 16px title */
+.ai-card-body {
+  background: var(--bg-white);
+  width: 100%;
+  padding: 24px 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.ai-card-title {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-primary);
+}
+
+/* ─────────────────────────────────────────────────────────
+   About section — white bg, py-120px
+   ───────────────────────────────────────────────────────── */
+
+.about-section {
+  background: var(--bg-white);
+  width: 100%;
+  padding: 120px 48px;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
+
+.about-inner {
+  max-width: 1728px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.about-text,
+.values-text {
+  width: 800px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-lead,
+.values-lead {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.about-eyebrow,
+.values-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.about-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.32px;
+  color: var(--text-primary);
+}
+
+.values-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.24px;
+  color: var(--text-primary);
+}
+
+.values-title u {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.about-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+.values-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.about-collage {
+  width: 1200px;
+  max-width: 100%;
+  height: 361px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.about-collage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+  display: block;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Contact anchor
+   ───────────────────────────────────────────────────────── */
+
+.contact-anchor { height: 0; scroll-margin-top: 80px; }
+
+/* ─────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────── */
+
+@media (max-width: 880px) {
+  .nav-wrap, .hero, .content-section { width: 100%; padding-left: 24px; padding-right: 24px; }
+  .ai-grid-row { flex-wrap: wrap; }
+  .ai-card { width: 100%; height: auto; }
+  .ai-card-image { height: 260px; }
+  .about-text, .values-text { width: 100%; }
+  .about-collage { width: 100%; height: auto; }
+  .about-collage img { position: static; height: auto; }
+}
+
+@media (max-width: 760px) {
+  .hero-headline { font-size: 40px; letter-spacing: -1px; }
+  .aurora-overlay { font-size: 40px; letter-spacing: -1px; }
+  .hero-bio { font-size: 18px; }
+  .exp-company-name, .exp-role-inline, .exp-date { font-size: 16px; }
+  .section-heading { font-size: 24px; }
+  .about-title { font-size: 28px; }
+  .values-title { font-size: 20px; }
+  .about-body, .values-body { font-size: 18px; }
+}
+
+@media (max-width: 640px) {
+  .back-link { margin-left: 24px; }
+  .nav-wrap { padding: 12px 16px 0; }
+  .nav-pill { padding: 12px 20px; }
+  .nav-logo { font-size: 16px; }
+  .nav-links { gap: 16px; font-size: 12px; }
+  .hero { padding: 80px 24px 40px; }
+  .hero-headline { font-size: 32px; letter-spacing: -1px; }
+  .aurora-overlay { font-size: 32px; letter-spacing: -1px; }
+  .card-image { height: 260px; }
+  .card-phone { top: 20px; width: 200px; height: auto; }
+  .about-section { padding: 80px 24px; }
+  .about-title { font-size: 24px; }
+  .about-body, .values-body { font-size: 16px; }
+}
