@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast exit and re-entry for F&amp;O — Case Study (full)</title>
+  <!-- Typography spec: https://www.figma.com/design/ejcY6tcpxNQO7mErIxJWo8/Porftolio-Post-UW?node-id=2019-20198 -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">
+    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.5 7H3.5M3.5 7L6.5 10M3.5 7L6.5 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    All iterations
+  </a>
+
+  <header class="case-header" aria-label="Case study header">
+    <img
+      class="case-header__banner"
+      src="assets/hero-header.png"
+      width="3456"
+      height="1026"
+      alt="Groww F&amp;O Positions: two phones on a textured background showing indices, tabs, and total returns" />
+  </header>
+
+  <!-- Frame 9 export: title block + solution overview + first composite mockup -->
+  <figure class="case-intro-raster col">
+    <img
+      src="assets/intro-and-mockup.png"
+      width="1440"
+      height="3722"
+      alt="Fast exit case study: overview copy and before/after product screens" />
+  </figure>
+
+  <div class="sr-only">
+    <h1>Fast exit and re-entry for F&amp;O</h1>
+    <p>Simplifying a multi-step process into a single gesture helps option sellers save time, enabling them to exit trades at the right moment and trade more quickly.</p>
+    <h2>About Groww</h2>
+    <p>Groww is an India-based investing and trading platform, similar to Robinhood, serving millions of users and offering stocks, F&amp;O, and other investment products.</p>
+    <h2>Brief</h2>
+    <p>Exiting a trade required users to do several steps. 70% of all trades were exited within 15 minutes.</p>
+    <h2>My Role</h2>
+    <p>Solo product designer owning the problem working alongside engineering and product counterparts. Shipped on both web and app.</p>
+    <h2>Team</h2>
+    <p>PM: Aayush Sharma and Aman. Engg: Brijesh Maserani and Anand Mishra.</p>
+    <h2>Solution overview</h2>
+    <p>Fast Exit lets users quickly exit trades without leaving their current position. Impact: used daily by over 600,000+ traders.</p>
+  </div>
+
+  <hr class="case-divider" />
+  <h2 class="case-section-title col">Trading options and the trader</h2>
+
+  <div class="case-section-group col" style="margin-top: 32px;">
+
+    <div class="case-section">
+      <h3 class="case-section-heading">Option Buying</h3>
+      <div class="case-section-body">
+        <p>An option is a contract that gives you the right to buy or sell a stock at a specific price on or before a certain date, in exchange for a small upfront fee. Think of it like a down payment on a house, but it allows you to call dibs on the house. Buying an apple stock option lets you call dibs on the stock at that price.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3 class="case-section-heading">Why people trade options?</h3>
+      <div class="case-section-body">
+        <p>Apple stock might be priced at $100, but an option could cost just $10, allowing people to trade with less money.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3 class="case-section-heading">The core trading problem</h3>
+      <div class="case-section-body">
+        <p>Options are very volatile, and this $10 premium can quickly rise to $20 or drop to zero in seconds. Therefore, decisions must be made rapidly. Option buyers take advantage of this volatility to make quick profits, so timing is crucial.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <figure class="case-figure col case-figure--context">
+    <img
+      src="assets/context-trading.png"
+      width="1440"
+      height="810"
+      alt="Trading terminal with persona and notes: options are volatile; need to enter and exit at the right moment" />
+  </figure>
+  <p class="case-caption">Trading options</p>
+
+  <hr class="case-divider" />
+  <h2 class="case-section-title col">Current experience wasn’t cutting it</h2>
+
+  <div class="case-section col" style="margin-top: 32px;">
+    <h3 class="case-section-heading">Multi-step process leads to losses</h3>
+    <div class="case-section-body">
+      <p>Imagine you see a profit of $100, but by the time you finish the exit process, your profit drops to $80. This can be really disappointing for traders, as it feels like leaving money on the table. The multi-step process is causing delays.</p>
+    </div>
+  </div>
+
+  <figure class="case-figure col">
+    <img
+      src="assets/image-68-flow.png"
+      width="1440"
+      height="810"
+      alt="Current experience: step by step exit flow in the app" />
+  </figure>
+  <p class="case-caption">Current experience, step by step</p>
+
+  <div class="case-section-group col" style="margin-top: 48px;">
+
+    <div class="case-section">
+      <h3 class="case-section-heading">Stock solution was enforced on derivatives</h3>
+      <div class="case-section-body">
+        <p>Before Groww introduced derivatives, the main purpose of the app was stock investing. The current flow for placing an order is derived from stock experiences. Unlike stocks, derivatives are volatile, and when traders decide to exit their positions, they typically sell all of their shares. In fact, 85% of traders choose to exit their entire quantity when they want to leave a position.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3 class="case-section-heading">Current exiting at market experience didn’t provide selective exit</h3>
+      <div class="case-section-body">
+        <p>Groww has launched a new feature called Exit All, which lets you choose and exit your positions at the best market price. This feature is great when you want to exit all your positions at once, but it doesn’t work if you only want to exit two trades out of four.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <figure class="case-figure col">
+    <img
+      src="assets/image-69-exit-all.png"
+      width="1440"
+      height="810"
+      alt="Exit all positions flow" />
+  </figure>
+  <p class="case-caption">Exit all positions</p>
+
+  <blockquote class="case-quote col">
+    Traders were struggling because the process to exit a position was too long. While the exit all feature was useful, it didn’t allow users to exit trades one by one.
+  </blockquote>
+
+  <figure class="case-figure col">
+    <img
+      src="assets/image-70-nps.png"
+      width="1440"
+      height="652"
+      alt="Selected NPS survey comments from traders" />
+  </figure>
+  <p class="case-caption">NPS Survey comments</p>
+
+  <div class="case-explorations">
+    <div class="col">
+
+      <h2 class="case-section-title" style="margin-top: 0;">Iterations</h2>
+
+      <div class="case-section" style="margin-top: 30px;">
+        <h3 class="case-section-heading">A: Replacing exit all with fast exit</h3>
+        <div class="case-section-body">
+          <p>Exit All lets users close multiple positions at once. An optional Fast Exit, can be enabled via settings, to close all trades on market price with one tap.</p>
+        </div>
+      </div>
+
+      <figure class="exploration-figure">
+        <img
+          src="assets/iteration-a-exit-all-vs-fast-exit.png"
+          width="1440"
+          height="1020"
+          alt="Exit all current versus Fast Exit: two phone mockups compared" />
+      </figure>
+      <p class="exploration-label">Exit all current vs Fast Exit</p>
+      <p class="exploration-learning"><strong>Learning:</strong> This allowed exiting with one click but did not solve the problem of selective exit. This solution can also cause errors, like accidentally exiting all positions when you did not mean to.</p>
+
+      <div class="case-section" style="margin-top: 48px;">
+        <h3 class="case-section-heading">B: Instant exit button inside bottom sheet</h3>
+        <div class="case-section-body">
+          <p>Clicking on an option gives you multiple actions you can take on. An instant exit button can be placed there to allow users to exit positions.</p>
+        </div>
+      </div>
+
+      <figure class="exploration-figure">
+        <img
+          src="assets/iteration-b-bottom-sheet.png"
+          width="1440"
+          height="896"
+          alt="Bottom sheet exploration: current UI versus UI with instant exit" />
+      </figure>
+      <p class="exploration-label">Current bottom sheet UI vs UI with instant exit</p>
+      <p class="exploration-learning"><strong>Learning:</strong> This was an elegant solution that allowed users to exit in two clicks. It was designed to prevent accidental clicks, but it still felt a bit slow. User testing showed that people prefer to see their total returns before exiting their positions, but the screen blocks that information.</p>
+
+      <div class="case-fun-fact">
+        <p><strong>Fun fact:</strong> Groww’s stakeholders approved this approach, but I felt I could improve it. I believed that exiting directly from the positions tab while tracking returns would be a better solution. I requested more time and moved forward.</p>
+      </div>
+
+      <div class="case-section" style="margin-top: 48px;">
+        <h3 class="case-section-heading">C: Swipe / Tap on the position</h3>
+        <div class="case-section-body">
+          <p>I explored revealing <strong>Exit at market</strong> from the row itself—either by swiping the list item or by tapping a dedicated affordance on the right—so traders never lose sight of total returns on the positions tab.</p>
+        </div>
+      </div>
+
+      <figure class="exploration-figure exploration-figure--tall">
+        <img
+          src="assets/iteration-swipe-tap.png"
+          width="1440"
+          height="1036"
+          alt="Swipe versus tap interaction on a position row" />
+      </figure>
+      <p class="exploration-label">Fast Exit on Swipe</p>
+      <p class="exploration-learning"><strong>Swipe vs Tap:</strong> I decided to go ahead with tap instead of swipe. Swipe as an interaction was used to switch between different tabs on the app. Swiping on a position was interfering with swiping between tabs.</p>
+      <p class="exploration-learning" style="margin-top: 12px;">This solution turned out to be promising since it allowed user to exit the position while monitoring total returns. Few users even reported that they kept the drawer open and exiting the instant they saw $100 profit. <strong>One-click exit.</strong></p>
+
+      <figure class="exploration-figure exploration-figure--diagram" style="margin-top: 48px;">
+        <img
+          src="assets/list-item-explorations.png"
+          width="1440"
+          height="798"
+          alt="List item layout explorations for Fast Exit" />
+      </figure>
+      <p class="exploration-label">List item explorations</p>
+
+    </div>
+  </div>
+
+  <h2 class="case-section-title col" style="margin-top: 72px;">Introducing Fast Exit</h2>
+
+  <figure class="case-figure col case-figure--phone">
+    <img
+      src="assets/fast-exit-intro-alt.png"
+      width="1440"
+      height="896"
+      alt="Introducing Fast Exit on the positions screen" />
+  </figure>
+
+  <figure class="case-figure col case-figure--spec">
+    <img
+      src="assets/tap-areas-spec.png"
+      width="1440"
+      height="390"
+      alt="Tap target on the right side of the list row for Fast Exit" />
+  </figure>
+
+  <p class="case-section-body col" style="margin-top: 24px;">Tap areas: To define a clear mental mode for users I made sure that the entire right side of list item was clickable so users know where to tap to see fast exit button.</p>
+
+  <p class="case-section-body col" style="margin-top: 24px;">Traders can only open one side panel at a time. The team discussed whether to let users open multiple drawers simultaneously or just one at a time. I decided to allow only one side drawer to be open at a time. This choice keeps the positions tab UI clean and prevents accidental clicks.</p>
+
+  <figure class="case-figure col case-figure--compare">
+    <img
+      src="assets/drawer-comparison.png"
+      width="1440"
+      height="960"
+      alt="Comparison: only one side drawer open at a time" />
+  </figure>
+
+  <hr class="case-divider" />
+
+  <figure class="case-figure case-figure--wide col">
+    <img
+      src="assets/web-dashboard.png"
+      width="2000"
+      height="1080"
+      alt="Fast Exit on Groww web: positions table with one-click exit" />
+  </figure>
+  <p class="case-caption">FAST EXIT WEB</p>
+
+  <figure class="case-figure case-figure--wide col" style="margin-top: 32px;">
+    <img
+      src="assets/web-terminal.png"
+      width="2000"
+      height="1080"
+      alt="Fast Exit on terminal web: positions panel over chart" />
+  </figure>
+  <p class="case-caption">FAST EXIT WEB</p>
+
+  <div class="case-update-block col">
+    <p><span class="lead">Update:</span> Fast exit was launched for all users on Groww by March 2025. It quickly became a top NPS promoter with 50,000+ daily users. However, I observed a similar issue when users tried to re-enter the same position.</p>
+    <p class="lead">What if users could re-enter the trade in a similar way?</p>
+  </div>
+
+  <p class="case-caption col" style="margin-top: 40px;">Fast re-entry</p>
+
+  <figure class="case-figure col case-figure--phone" style="margin-top: 16px;">
+    <img
+      src="assets/fast-reentry.png"
+      width="1440"
+      height="896"
+      alt="Fast re-entry exploration on mobile" />
+  </figure>
+
+  <div class="case-page-end"></div>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+/*
+ * Typography & spacing aligned to Figma file “Porftolio-Post-UW” (MacBook frame).
+ * https://www.figma.com/design/ejcY6tcpxNQO7mErIxJWo8/Porftolio-Post-UW?node-id=2019-20198
+ *
+ * Reference nodes (Groww Sans / Söhne → Sohne in @font-face):
+ * — H1 title 48/1.4 −0.96px: 2019:20204
+ * — Subtitle / body 18/1.5 −0.36px: 2019:20205, 2019:57608
+ * — Section H2 (Sohne) 32/1.4 −0.64px: 2024:29477, 2026:35055
+ * — Section H3 20 Medium/1.5 −0.4px: 2019:57607, 2024:29480
+ * — Captions / iteration labels (same text style): Groww Sans Medium 12/1.5 −0.24px tertiary #898c8e, centered — 2026:32377 (“Trading options”…), 2026:35755 (“List item explorations”…)
+ * — Pull quote 24 Medium/1.4 −0.48px: 2026:35049
+ * — Learning lines 18 Regular + Bold lead, 1.5, −0.36px primary: 2026:35759; Swipe vs Tap / one-click: 2030:37608, 2030:37609
+ * — Fun fact (same scale as learning body): match adjacent body text in frame (18/1.5)
+ */
+
+/* Case study full — 720px column, local @2× PNGs, hero ~40vh */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('../Sohne-Halbfett.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('../Sohne-Kräftig.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Groww Sans';
+  src: url('../GrowwSans-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg:             #ffffff;
+  --bg-secondary:   #f8f8f8;
+  --bg-tertiary:    #fcfcfc;
+  --border:         #e7e8e9;
+  --text-primary:   #353839;
+  --text-secondary: #7f8283;
+  --text-tertiary:  #898c8e;
+
+  --font-heading: 'Sohne', 'Inter', system-ui, sans-serif;
+  --font-sans:    'Groww Sans', 'Inter', system-ui, sans-serif;
+
+  --col-width: 720px;
+  --col-pad:   24px;
+  --hero-h:    40vh;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a   { color: inherit; text-decoration: none; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  padding: 20px 32px;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover { color: var(--text-primary); }
+
+.back-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+/* Full-bleed header — wide banner (~3.4:1), fills ~40vh */
+.case-header {
+  position: relative;
+  width: 100%;
+  height: var(--hero-h);
+  min-height: 200px;
+  max-height: 560px;
+  overflow: hidden;
+  background: linear-gradient(165deg, #d4dde3 0%, #e4ebef 45%, #eef2f4 100%);
+}
+
+.case-header__banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+
+/* Tall Frame 9 export: intro copy + first mockup */
+.case-intro-raster {
+  margin: 0 auto;
+  margin-top: 8px;
+  width: var(--col-width);
+  max-width: calc(100% - var(--col-pad) * 2);
+}
+
+.case-intro-raster img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.col {
+  width: var(--col-width);
+  max-width: calc(100% - var(--col-pad) * 2);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-section-heading {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
+}
+
+.case-section-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  color: var(--text-primary);
+}
+
+.case-section-body p + p { margin-top: 1.5em; }
+.case-section-body strong { font-weight: 700; }
+
+.case-section-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Figma 2026:32377 & 2026:35755 — Groww Sans Medium (not Bold): 12px / 1.5 / −0.24px / tertiary */
+.case-caption,
+.exploration-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.case-caption {
+  width: 344px;
+  max-width: calc(100% - var(--col-pad) * 2);
+  margin: 8px auto 0;
+}
+
+.case-divider {
+  width: var(--col-width);
+  max-width: calc(100% - var(--col-pad) * 2);
+  margin: 56px auto 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.case-section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.4;
+  letter-spacing: -0.64px;
+  color: var(--text-primary);
+  margin-top: 58px;
+}
+
+/* Figures — consistent card treatment */
+.case-figure {
+  margin: 48px auto 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.case-figure img {
+  width: 100%;
+  height: auto;
+}
+
+.case-figure--context {
+  margin-top: 48px;
+}
+
+.case-figure--phone {
+  background: var(--bg-tertiary);
+}
+
+.case-figure--spec {
+  margin-top: 24px;
+  background: var(--bg-secondary);
+}
+
+.case-figure--compare {
+  margin-top: 40px;
+}
+
+.case-figure--wide {
+  max-width: min(1000px, 100% - var(--col-pad) * 2);
+  width: 100%;
+  background: var(--bg-secondary);
+}
+
+/* Figma 2026:35049 — Groww Sans Medium 24px / 1.4, −0.48px */
+.case-quote {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.48px;
+  color: var(--text-primary);
+  border-left: 2px solid var(--text-primary);
+  padding-left: 16px;
+  margin-top: 56px;
+}
+
+.case-fun-fact {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  color: var(--text-primary);
+  margin-top: 30px;
+}
+
+.case-fun-fact strong { font-weight: 700; }
+
+.case-update-block {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  color: var(--text-primary);
+  margin-top: 48px;
+}
+
+.case-update-block p + p { margin-top: 1em; }
+.case-update-block .lead { font-weight: 700; }
+
+.case-explorations {
+  width: 100%;
+  background: var(--bg-tertiary);
+  margin-top: 91px;
+  padding: 91px 0;
+}
+
+.case-explorations .col {
+  display: flex;
+  flex-direction: column;
+}
+
+.exploration-figure {
+  margin-top: 30px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.exploration-figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.exploration-figure--tall {
+  min-height: 280px;
+}
+
+.exploration-figure--diagram {
+  min-height: 240px;
+}
+
+.exploration-label {
+  margin-top: 12px;
+}
+
+/* Figma 2026:35759, 2030:37608–37609 — 18px Regular, primary; bold leads in <strong> */
+.exploration-learning {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  color: var(--text-primary);
+  text-align: left;
+  margin-top: 8px;
+}
+
+.exploration-learning strong {
+  font-weight: 700;
+}
+
+.case-page-end { height: 120px; }
+
+@media (max-width: 780px) {
+  .case-section-title { font-size: 28px; }
+  .case-header { max-height: 48vh; }
+  .case-header__banner { object-position: 50% 50%; }
+}
+
+@media (max-width: 560px) {
+  :root { --hero-h: max(32vh, 180px); }
+  .back-link { padding: 16px 24px; }
+  .case-section-title { font-size: 24px; }
+  .case-section-heading { font-size: 17px; }
+  .case-section-body { font-size: 16px; }
+  .case-quote { font-size: 18px; }
+  .exploration-figure { min-height: 160px; }
+  .exploration-figure--tall { min-height: 200px; }
+}

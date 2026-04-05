@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast exit and re-entry for F&amp;O — Case Study</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a class="back-link" href="../index.html">
+    <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.5 7H3.5M3.5 7L6.5 10M3.5 7L6.5 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    All iterations
+  </a>
+
+  <!-- ── Hero: 40vh ── -->
+  <section class="case-hero" aria-label="Case study hero">
+    <img class="case-hero-bg"
+      src="https://www.figma.com/api/mcp/asset/3e9485c4-eb3b-4c16-8a90-6a8cefdd479f"
+      alt="" />
+    <img class="case-hero-phones"
+      src="https://www.figma.com/api/mcp/asset/f827260a-917d-4cc7-a9d7-84e1f0b00edd"
+      alt="Fast Exit feature screens" />
+  </section>
+
+  <!-- ── Overview ── -->
+  <article class="case-content col">
+
+    <div class="case-title-block">
+      <h1 class="case-title">Fast exit and re-entry for F&amp;O</h1>
+      <p class="case-subtitle">Simplifying a multi-step process into a single gesture helps option sellers save time, enabling them to exit trades at the right moment and trade more quickly.</p>
+    </div>
+
+    <div class="case-section">
+      <h2 class="case-section-heading">About Groww</h2>
+      <div class="case-section-body">
+        <p>Groww is an India-based investing and trading platform, similar to Robinhood, serving millions of users and offering stocks, F&amp;O, and other investment products. Most traders on Groww are option buyers who profit from sudden moves in market. This feature is catered to them.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2 class="case-section-heading">Brief</h2>
+      <div class="case-section-body">
+        <p>Exiting a trade required users to do several steps, and the price of an option changed every 0.3 seconds, which made it difficult for users to book profits at the right price. <strong>70% of all trades were exited within 15 minutes.</strong> I wanted to address the needs of these option traders who wanted to act quickly and book profits at the right moment.</p>
+      </div>
+    </div>
+
+    <div class="case-two-col">
+      <div class="case-section">
+        <h2 class="case-section-heading">My Role</h2>
+        <div class="case-section-body">
+          <p>Solo product designer owning the problem working alongside engineering and product counterparts. Shipped on both web and app.</p>
+        </div>
+      </div>
+      <div class="case-section">
+        <h2 class="case-section-heading">Team</h2>
+        <div class="case-section-body">
+          <p>PM: Aayush Sharma &amp; Aman<br>Engg: Brijesh Maserani &amp; Anand Mishra</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h2 class="case-section-heading">Solution overview</h2>
+      <div class="case-section-body">
+        <p>I designed Fast Exit, a feature that lets users quickly exit trades without leaving their current position. Research showed that tracking returns during the exit process is essential, so I developed a layered gesture based solution that enables one-click exits from the positions tab.</p>
+        <p><strong>Impact:</strong> Now used daily by over 600,000+ traders and has simplified the exit process by removing two steps.</p>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- ── Image 67: 720×988 mockup ── -->
+  <div class="case-image col" style="margin-top: 80px;">
+    <img
+      src="https://www.figma.com/api/mcp/asset/49e2b7b4-8fa8-4cce-b428-b0707dedf9c8"
+      alt="Fast Exit feature screens" />
+  </div>
+
+  <!-- ── Section: Trading options and the trader ── -->
+  <hr class="case-divider" />
+  <h2 class="case-section-title col">Trading options and the trader</h2>
+
+  <div class="case-section-group col" style="margin-top: 32px;">
+
+    <div class="case-section">
+      <h3 class="case-section-heading">Option Buying</h3>
+      <div class="case-section-body">
+        <p>An option is a contract that gives you the right to buy or sell a stock at a specific price on or before a certain date, in exchange for a small upfront fee. Think of it like a down payment on a house, but it allows you to call dibs on the house. Buying an apple stock option lets you call dibs on the stock at that price.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3 class="case-section-heading">Why people trade options?</h3>
+      <div class="case-section-body">
+        <p>Apple stock might be priced at $100, but an option could cost just $10, allowing people to trade with less money.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3 class="case-section-heading">The core trading problem</h3>
+      <div class="case-section-body">
+        <p>Options are very volatile, and this $10 premium can quickly rise to $20 or drop to zero in seconds. Therefore, decisions must be made rapidly. Option buyers take advantage of this volatility to make quick profits, so timing is crucial.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Context image block: 720×405 ── -->
+  <div class="case-context-block col">
+    <img class="context-chart"
+      src="https://www.figma.com/api/mcp/asset/e7b16856-890e-456f-8f1f-2107dd65d758"
+      alt="Groww indices chart" />
+    <img class="context-persona"
+      src="https://www.figma.com/api/mcp/asset/ae814717-34bb-447c-a8b0-c4cb0305a73d"
+      alt="" />
+    <div class="context-quote context-quote--upper">Options are volatile</div>
+    <div class="context-quote context-quote--lower">I need to enter and exit trades at the right moment</div>
+  </div>
+  <p class="case-caption">Trading options</p>
+
+  <!-- ── Section: Current experience wasn't cutting it ── -->
+  <hr class="case-divider" />
+  <h2 class="case-section-title col">Current experience wasn't cutting it</h2>
+
+  <div class="case-section col" style="margin-top: 32px;">
+    <h3 class="case-section-heading">Multi-step process leads to losses</h3>
+    <div class="case-section-body">
+      <p>Imagine you see a profit of $100, but by the time you finish the exit process, your profit drops to $80. This can be really disappointing for traders, as it feels like leaving money on the table. The multi-step process is causing delays.</p>
+    </div>
+  </div>
+
+  <!-- ── Image 68: 720×405 ── -->
+  <div class="case-image col">
+    <img
+      src="https://www.figma.com/api/mcp/asset/0b3caa6d-145d-483b-adb4-c494982d0698"
+      alt="Current experience, step by step" />
+  </div>
+  <p class="case-caption">Current experience, step by step</p>
+
+  <div class="case-section-group col" style="margin-top: 48px;">
+
+    <div class="case-section">
+      <h3 class="case-section-heading">Stock solution was inforced on derivatives</h3>
+      <div class="case-section-body">
+        <p>Before Groww introduced derivatives, the main purpose of the app was stock investing. The current flow for placing an order is derived from stock experiences. Unlike stocks, derivatives are volatile, and when traders decide to exit their positions, they typically sell all of their shares. In fact, 85% of traders choose to exit their entire quantity when they want to leave a position.</p>
+      </div>
+    </div>
+
+    <div class="case-section">
+      <h3 class="case-section-heading">Current exiting at market experience didn't provide selective exit</h3>
+      <div class="case-section-body">
+        <p>Groww has launched a new feature called Exit All, which lets you choose and exit your positions at the best market price. This feature is great when you want to exit all your positions at once, but it doesn't work if you only want to exit two trades out of four.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Image 69: 720×405 ── -->
+  <div class="case-image col">
+    <img
+      src="https://www.figma.com/api/mcp/asset/e0fa88a6-82e9-4414-ace5-05c25b11a962"
+      alt="Exit all positions" />
+  </div>
+  <p class="case-caption">Exit all positions</p>
+
+  <!-- ── Pull quote ── -->
+  <blockquote class="case-quote col">
+    Traders were struggling because the process to exit a position was too long. While the exit all feature was useful, it didn't allow users to exit trades one by one.
+  </blockquote>
+
+  <!-- ── Image 70: 720×326 ── -->
+  <div class="case-image col">
+    <img
+      src="https://www.figma.com/api/mcp/asset/028d9a76-11d8-429c-9e08-e0afba093bcd"
+      alt="NPS Survey comments" />
+  </div>
+  <p class="case-caption">NPS Survey comments</p>
+
+  <!-- ── Explorations section ── -->
+  <div class="case-explorations">
+    <div class="col">
+
+      <h2 class="case-section-title" style="margin-top: 0;">Explorations</h2>
+
+      <!-- A -->
+      <div class="case-section" style="margin-top: 30px;">
+        <h3 class="case-section-heading">A: Replacing exit all with fast exit</h3>
+        <div class="case-section-body">
+          <p>Exit All lets users close multiple positions at once. An optional Fast Exit, can be enabled via settings, to close all trades on market price with one tap.</p>
+        </div>
+      </div>
+
+      <div class="exploration-image-block">
+        <!-- Phone comparison mockup (Figma component, no raster export) -->
+      </div>
+      <p class="exploration-label">Exit all current vs Fast Exit</p>
+      <p class="exploration-learning">Learning: This allowed exiting with one click but did not solve the problem of selective exit. This solution can also cause errors, like accidentally exiting all positions when you did not mean to.</p>
+
+      <!-- B -->
+      <div class="case-section" style="margin-top: 48px;">
+        <h3 class="case-section-heading">B: Instant exit button inside bottom sheet</h3>
+        <div class="case-section-body">
+          <p>Clicking on an option gives you multiple actions you can take on. An instant exit button can be placed there to allow users to exit positions.</p>
+        </div>
+      </div>
+
+      <div class="exploration-image-block">
+        <!-- Phone comparison mockup (Figma component, no raster export) -->
+      </div>
+      <p class="exploration-label">Current bottom sheet UI vs UI with instant exit</p>
+      <p class="exploration-learning">Learning: This was an elegant solution that allowed users to exit in two clicks. It was designed to prevent accidental clicks, but it still felt a bit slow. User testing showed that people prefer to see their total returns before exiting their positions, but the screen blocks that information.</p>
+
+      <!-- Fun fact -->
+      <div class="case-fun-fact">
+        <p><strong>Fun fact:</strong> Groww's stakeholders approved this approach, but I felt I could improve it. I believed that exiting directly from the positions tab while tracking returns would be a better solution. I requested more time and moved forward.</p>
+      </div>
+
+      <!-- C -->
+      <div class="case-section" style="margin-top: 48px;">
+        <h3 class="case-section-heading">C: Swipe / Tap on the position</h3>
+        <div class="case-section-body">
+          <p>Exit All lets users close multiple positions at once. An optional Fast Exit, can be enabled via settings, to close all trades on market price with one tap.</p>
+        </div>
+      </div>
+
+      <div class="exploration-image-block exploration-image-block--c">
+        <img
+          src="https://www.figma.com/api/mcp/asset/ee3ee835-6cbe-403c-b27a-94de6c2df4aa"
+          alt="Swipe vs Tap exploration" />
+      </div>
+      <p class="exploration-learning">Swipe vs Tap: This was an elegant solution that allowed users to exit in two clicks. It was designed to prevent accidental clicks, but it still felt a bit slow. User testing showed that people prefer to see their total returns before exiting their positions, but the screen blocks that information.</p>
+
+    </div>
+  </div>
+
+  <div class="case-page-end"></div>
+
+</body>
+</html>

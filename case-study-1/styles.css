@@ -1,0 +1,464 @@
+/* ─────────────────────────────────────────────────────────
+   Fonts
+   ───────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('../Sohne-Halbfett.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('../Sohne-Kräftig.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Groww Sans';
+  src: url('../GrowwSans-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Tokens
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  --bg:             #ffffff;
+  --bg-secondary:   #f8f8f8;
+  --bg-tertiary:    #fcfcfc;
+  --border:         #e7e8e9;
+  --text-primary:   #353839;
+  --text-secondary: #7f8283;
+  --text-tertiary:  #898c8e;
+
+  --font-heading: 'Sohne', 'Inter', system-ui, sans-serif;
+  --font-sans:    'Groww Sans', 'Inter', system-ui, sans-serif;
+
+  --col-width: 720px;
+  --col-pad:   24px;
+
+  --hero-h:    40vh;
+  /* phone composite: 641.5×911.5px, top: -199px in 513px hero */
+  --phone-h:   71.08vh; /* 40vh × (911.5/513) */
+  --phone-top: -15.52vh; /* 40vh × (-199/513) */
+}
+
+/* ─────────────────────────────────────────────────────────
+   Reset
+   ───────────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a   { color: inherit; text-decoration: none; }
+
+/* ─────────────────────────────────────────────────────────
+   Back link
+   ───────────────────────────────────────────────────────── */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  padding: 20px 32px;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover { color: var(--text-primary); }
+
+.back-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Hero — 40vh, scales with viewport
+   ───────────────────────────────────────────────────────── */
+
+.case-hero {
+  position: relative;
+  width: 100%;
+  height: var(--hero-h);
+  overflow: hidden;
+  background: var(--bg-tertiary); /* #fcfcfc */
+}
+
+.case-hero-bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.case-hero-phones {
+  position: absolute;
+  left: 50%;
+  top: var(--phone-top);
+  transform: translateX(-50%);
+  height: var(--phone-h);
+  width: auto;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Column utility
+   ───────────────────────────────────────────────────────── */
+
+.col {
+  width: var(--col-width);
+  max-width: calc(100% - var(--col-pad) * 2);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Content sections
+   ───────────────────────────────────────────────────────── */
+
+.case-content {
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Title block */
+.case-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.4;
+  letter-spacing: -0.96px;
+  color: var(--text-primary);
+}
+
+.case-subtitle {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  color: var(--text-secondary);
+}
+
+/* Generic section */
+.case-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-section-heading {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
+}
+
+.case-section-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  color: var(--text-primary);
+}
+
+.case-section-body p + p { margin-top: 1.5em; }
+.case-section-body strong { font-weight: 700; }
+
+/* My Role + Team two-column */
+.case-two-col {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.case-two-col .case-section { flex: 0 0 344px; }
+
+/* Section group */
+.case-section-group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Images — always 720px wide, centered via .col
+   ───────────────────────────────────────────────────────── */
+
+.case-image {
+  margin-top: 48px;
+}
+
+.case-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Caption — centered, 344px max, 12px
+   ───────────────────────────────────────────────────────── */
+
+.case-caption {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+  color: var(--text-tertiary);
+  text-align: center;
+  width: 344px;
+  max-width: calc(100% - var(--col-pad) * 2);
+  margin: 8px auto 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Dividers and section headings
+   ───────────────────────────────────────────────────────── */
+
+.case-divider {
+  width: var(--col-width);
+  max-width: calc(100% - var(--col-pad) * 2);
+  margin: 56px auto 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* 32px Sohne heading for major sections */
+.case-section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.4;
+  letter-spacing: -0.64px;
+  color: var(--text-primary);
+  margin-top: 58px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Context image block — 720×405, bg #f8f8f8
+   ───────────────────────────────────────────────────────── */
+
+.case-context-block {
+  position: relative;
+  width: 100%;
+  height: 405px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+  margin-top: 48px;
+  border-radius: 4px;
+}
+
+.context-chart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 606px;
+  height: 350px;
+  max-width: none;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.context-persona {
+  position: absolute;
+  left: -97px;
+  top: 180px;
+  width: 363px;
+  height: 363px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.context-quote {
+  position: absolute;
+  left: calc(50% - 247px);
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 8px;
+  width: 165px;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.1px;
+  color: #141413;
+}
+
+.context-quote--upper { top: 129px; }
+.context-quote--lower { top: 167px; }
+
+/* ─────────────────────────────────────────────────────────
+   Pull quote — left border, GrowwSans Medium 24px
+   ───────────────────────────────────────────────────────── */
+
+.case-quote {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.48px;
+  color: var(--text-primary);
+  border-left: 2px solid var(--text-primary);
+  padding-left: 16px;
+  margin-top: 56px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Fun fact block
+   ───────────────────────────────────────────────────────── */
+
+.case-fun-fact {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  padding: 12px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  color: var(--text-primary);
+  margin-top: 30px;
+}
+
+.case-fun-fact strong { font-weight: 700; }
+
+/* ─────────────────────────────────────────────────────────
+   Explorations section — full-width, bg #fcfcfc
+   ───────────────────────────────────────────────────────── */
+
+.case-explorations {
+  width: 100%;
+  background: var(--bg-tertiary);
+  margin-top: 91px;
+  padding: 91px 0;
+}
+
+.case-explorations .col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Exploration image area */
+.exploration-image-block {
+  width: 100%;
+  height: 480px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.exploration-image-block--c {
+  height: 518px;
+}
+
+.exploration-image-block img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Exploration label (bold caption above learning text) */
+.exploration-label {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+  color: var(--text-primary);
+  margin-top: 12px;
+}
+
+/* Exploration learning text */
+.exploration-learning {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Page end padding
+   ───────────────────────────────────────────────────────── */
+
+.case-page-end { height: 120px; }
+
+/* ─────────────────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────────────────── */
+
+@media (max-width: 780px) {
+  .case-two-col { flex-direction: column; gap: 24px; }
+  .case-two-col .case-section { flex: unset; width: 100%; }
+  .context-chart { width: 90%; height: auto; aspect-ratio: 606/350; }
+  .context-persona { left: -40px; width: 240px; height: 240px; top: 210px; }
+  .context-quote { left: calc(50% - 165px); }
+  .case-context-block { height: 340px; }
+  .exploration-image-block { height: 320px; }
+  .exploration-image-block--c { height: 360px; }
+}
+
+@media (max-width: 560px) {
+  :root { --hero-h: max(40vh, 200px); }
+  .back-link { padding: 16px 24px; }
+  .case-title { font-size: 32px; letter-spacing: -0.64px; }
+  .case-section-title { font-size: 24px; }
+  .case-section-heading { font-size: 17px; }
+  .case-section-body, .case-subtitle { font-size: 16px; }
+  .case-quote { font-size: 18px; }
+  .context-persona { display: none; }
+  .context-quote { left: 16px; }
+  .case-context-block { height: 280px; }
+  .exploration-image-block { height: 240px; }
+  .exploration-image-block--c { height: 280px; }
+}
